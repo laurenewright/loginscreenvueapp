@@ -11,7 +11,7 @@
       <p class="justify-content-md-center">
         Email
       </p>
-      <input type="email" v-model="signupEmail" placeholder="Email" id="email" class="justify-content-md-center">
+      <input type="email" v-model="signupEmail" placeholder="Email" id="signUpemail" class="justify-content-md-center">
       <p class="justify-content-md-center">
         Password
       </p>
@@ -66,8 +66,7 @@ export default {
       }
       // prevents the page from reloading when submit is clicked
       event.preventDefault();
-    },
-
+    }
   }
 }
 </script>
