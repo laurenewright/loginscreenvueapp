@@ -24,7 +24,11 @@
         <input type="submit" value="Signup" name="signup" class="justify-content-md-center">
       </p>
     </form>
-    <p class="col-4 mx-auto text-center" id="loginButton"><button>Login</button></p>
+      <p class="col-4 mx-auto text-center" id="loginButton">
+      <button v-on:click="loginButton">
+        Login
+      </button>
+      </p>
   </div>
 </template>
 
@@ -41,9 +45,14 @@ export default {
     };
   },
   methods:{
+    loginButton: function(){
+      console.log ("there was an error 2")
+      document.getElementById('signupForm').style.display= "none";   
+      document.getElementById('loginForm').style.display= "block"; 
+    },
     checkSignupForm:function(event){
       this.signupErrors = [];
-      console.log("hey signup")
+      console.log("signing up for lvl up  conf")
       // if there is not an email entered
       if(!this.signupEmail){
         this.signupErrors.push("Email Required.");
@@ -70,7 +79,6 @@ export default {
   }
 }
 </script>
-
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 

@@ -21,52 +21,50 @@
       </p>
     </form>
     <p class="col-4 mx-auto text-center" id="signupButton">
-      <button @click="signupButton();">
+      <button v-on:click="signupButton">
         Sign Up
-        </button>
-    </p>
+      </button>
+      </p>
   </div>
 </template>
-
 <script>
-export default {
-  name: 'LoginForm',
-  el: "#loginForm",
-  data: function (){
-    return{
-    loginErrors:[],
-    loginEmail:null,
-    loginPassword:null
-    };
-  },
-  methods:{
-    checkLoginForm:function(event){
-      // if there is an email and password present
-      if(this.loginEmail && this.loginPassword){
-        alert("Thank you for testing!");
-      }
-      this.loginErrors = [];
-      console.log("hey login")
-      // if there is not a password entered
-      if(!this.loginPassword) {
-        this.loginErrors.push("Password Required.");
-      }
-      // if there is not an email entered
-      if(!this.loginEmail){
-        this.loginErrors.push("Email Required.");
-      }
-      // prevents the page from reloading when submit is clicked
-      event.preventDefault();
+  export default {
+    name: 'LoginForm',
+    el: "#loginForm",
+    data: function (){
+      return{
+      loginErrors:[],
+      loginEmail:null,
+      loginPassword:null
+      };
     },
-    // showing sign up div and hiding login div
-    // function showSignupForm() {
-    //     // show signup form div
-    //     document.getElementById('signupForm').style.display= "block";
-    // }
+    methods:{
+      signupButton: function(){
+        console.log ("there was an error")
+        document.getElementById('signupForm').style.display= "block";
+        document.getElementById('loginForm').style.display= "none";
+      },
+      checkLoginForm:function(event){
+        // if there is an email and password present
+        if(this.loginEmail && this.loginPassword){
+          alert("Thank you for testing!");
+        }
+        this.loginErrors = [];
+        console.log("logging in up for lvl up  conf")
+        // if there is not a password entered
+        if(!this.loginPassword) {
+          this.loginErrors.push("Password Required.");
+        }
+        // if there is not an email entered
+        if(!this.loginEmail){
+          this.loginErrors.push("Email Required.");
+        }
+        // prevents the page from reloading when submit is clicked
+        event.preventDefault();
+      },
+    }
   }
-}
 </script>
-
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 </style>
