@@ -49,6 +49,7 @@ export default {
       console.log ("there was an error 2")
       document.getElementById('signupForm').style.display= "none";   
       document.getElementById('loginForm').style.display= "block"; 
+      this.signupErrors.splice(0);
     },
     checkSignupForm:function(event){
       this.signupErrors = [];

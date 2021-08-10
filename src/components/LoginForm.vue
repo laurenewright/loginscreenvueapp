@@ -43,6 +43,7 @@
         console.log ("there was an error")
         document.getElementById('signupForm').style.display= "block";
         document.getElementById('loginForm').style.display= "none";
+        this.loginErrors.splice(0);
       },
       checkLoginForm:function(event){
         // if there is an email and password present
